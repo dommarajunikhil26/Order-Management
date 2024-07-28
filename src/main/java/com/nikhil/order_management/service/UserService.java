@@ -40,7 +40,6 @@ public class UserService {
         if(existingUser.isPresent()){
             return new ResponseEntity<>("User already exists", HttpStatus.BAD_REQUEST);
         }
-        user.setRole(user.getRole().toUpperCase());
         userRepository.save(user);
         return new ResponseEntity<>("New User added", HttpStatus.CREATED);
     }
