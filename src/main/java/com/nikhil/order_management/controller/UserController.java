@@ -1,5 +1,7 @@
 package com.nikhil.order_management.controller;
 
+import com.nikhil.order_management.dto.OrderSummaryDTO;
+import com.nikhil.order_management.dto.UserDTO;
 import com.nikhil.order_management.entity.Order;
 import com.nikhil.order_management.entity.User;
 import com.nikhil.order_management.service.UserService;
@@ -16,12 +18,12 @@ public class UserController {
     private UserService userService;
 
     @GetMapping("{userId}/orders")
-    public ResponseEntity<List<Order>> getAllOrders(@PathVariable Integer userId){
+    public ResponseEntity<List<OrderSummaryDTO>> getAllOrders(@PathVariable Integer userId){
         return userService.getAllOrders(userId);
     }
 
     @GetMapping("{userId}")
-    public ResponseEntity<User> getUser(@PathVariable Integer userId){
+    public ResponseEntity<UserDTO> getUser(@PathVariable Integer userId){
         return userService.getUser(userId);
     }
 
