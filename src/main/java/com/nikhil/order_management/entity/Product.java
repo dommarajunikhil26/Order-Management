@@ -1,5 +1,6 @@
 package com.nikhil.order_management.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -18,7 +19,8 @@ public class Product {
     @Column(nullable = false)
     private String productName;
 
-    private String description;
+    @Column(nullable = false, length = 1000)
+    private String productDescription;
 
     @Column(nullable = false)
     private double price;
@@ -28,5 +30,6 @@ public class Product {
 
     @ManyToOne
     @JoinColumn(name = "category_id", nullable = false)
+    @JsonBackReference
     private Category category;
 }

@@ -48,7 +48,7 @@ public class ProductService {
         if(existingProduct.isPresent()){
             Product updatedProduct = existingProduct.get();
             updatedProduct.setProductName(product.getProductName());
-            updatedProduct.setDescription(product.getDescription());
+            updatedProduct.setProductDescription(product.getProductDescription());
             updatedProduct.setPrice(product.getPrice());
             updatedProduct.setQuantityAvailable(product.getQuantityAvailable());
             updatedProduct.setCategory(product.getCategory());
